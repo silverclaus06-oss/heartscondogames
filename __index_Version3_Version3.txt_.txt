@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Hearts Condo Games</title>
+  <meta name="description" content="Discover the ultimate collection of exclusive Roblox condo games. Join thousands of players in immersive experiences."/>
+  <meta name="generator" content="v0.app"/>
+  <link rel="preload" href="/_next/static/media/797e433ab948586e-s.p.dbea232f.woff2" as="font" crossorigin="" type="font/woff2"/>
+  <link rel="preload" href="/_next/static/media/caa3a2e1cccd8315-s.p.853070df.woff2" as="font" crossorigin="" type="font/woff2"/>
+  <link rel="preload" as="image" href="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/noFilter%20%283%29-1snIHqMXbs9KTc4fHIDTiI6tRV4neq.webp"/>
+  <link rel="preload" as="image" href="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-TRupFOgy7mCnmwmeLWmgnXqynWgbOg.png"/>
+  <link rel="preload" as="image" href="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-GwwR8EdRE0YTjEo8T7m7dCaIjSMNGM.png"/>
+  <link rel="preload" as="image" href="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-LngsxXnkvfv4eL7mcyxrWNFPc8JbsJ.png"/>
+  <style>
+    body {
+      font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+      background: linear-gradient(to bottom, #081a37 0%, #183564 55%, #101933 100%);
+      color: #e0e7ef;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      position: relative;
+    }
+    /* 3D Heart Styles */
+    .hearts-bg-3d {
+      pointer-events: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      z-index: 1;
+    }
+    .heart-3d {
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      will-change: transform, filter, opacity;
+      opacity: 0.19;
+      filter: drop-shadow(0 2px 8px #12244b99) drop-shadow(0 0 10px #2b5cdb33);
+      transition: opacity 0.3s;
+    }
+    @keyframes float-3d-heart {
+      0%   { transform: translateY(0px) scale(1) translateZ(0px) rotateY(0deg) rotateX(0deg);}
+      15%  { transform: translateY(-18px) scale(1.1) translateZ(-12px) rotateY(8deg) rotateX(4deg);}
+      30%  { transform: translateY(-34px) scale(1.13) translateZ(9px) rotateY(-10deg) rotateX(7deg);}
+      50%  { transform: translateY(-26px) scale(0.93) translateZ(-18px) rotateY(12deg) rotateX(-7deg);}
+      70%  { transform: translateY(-13px) scale(1.09) translateZ(-4px) rotateY(-6deg) rotateX(0deg);}
+      85%  { transform: translateY(-7px) scale(1.03) translateZ(5px) rotateY(2deg) rotateX(-3deg);}
+      100% { transform: translateY(0px) scale(1) translateZ(0px) rotateY(0deg) rotateX(0deg);}
+    }
+    .h1 { left: 7vw; top: 11vh; animation: float-3d-heart 9s infinite ease-in-out; animation-delay: 0s;}
+    .h2 { left: 20vw; top: 34vh; animation: float-3d-heart 12s infinite ease-in-out; animation-delay: 2.5s;}
+    .h3 { left: 81vw; top: 21vh; animation: float-3d-heart 7s infinite ease-in-out; animation-delay: 1.2s;}
+    .h4 { left: 19vw; top: 60vh; animation: float-3d-heart 11s infinite ease-in-out; animation-delay: 3.2s;}
+    .h5 { left: 75vw; top: 72vh; animation: float-3d-heart 9s infinite ease-in-out; animation-delay: 4.6s;}
+    .h6 { left: 55vw; top: 6vh; animation: float-3d-heart 15s infinite ease-in-out; animation-delay: 1.9s;}
+    .h7 { left: 47vw; top: 82vh; animation: float-3d-heart 10s infinite ease-in-out; animation-delay: 2.7s;}
+    .h8 { left: 69vw; top: 39vh; animation: float-3d-heart 14s infinite ease-in-out; animation-delay: 5.5s;}
+    .h9 { left: 38vw; top: 42vh; animation: float-3d-heart 8s infinite ease-in-out; animation-delay: 6.3s;}
+    .h10 { left: 93vw; top: 68vh; animation: float-3d-heart 13s infinite ease-in-out; animation-delay: 3s;}
+    header {
+      position: relative;
+      z-index: 10;
+      border-bottom: 1px solid rgba(37, 99, 235, 0.14);
+      background: rgba(10, 23, 51, 0.72);
+      backdrop-filter: blur(5px);
+    }
+    header .max-w-7xl {
+      max-width: 80rem;
+      margin: 0 auto;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header .text-2xl {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #5ea6ff;
+      letter-spacing: 0.01em;
+      text-shadow: 0 2px 12px #19316499;
+    }
+    header nav {
+      gap: 2rem;
+      display: flex;
+    }
+    header nav button,
+    header nav a {
+      background: none;
+      border: none;
+      outline: none;
+      color: inherit;
+      font: inherit;
+      cursor: pointer;
+      transition: color 0.2s;
+      text-decoration: none;
+    }
+    header nav button:hover,
+    header nav a:hover {
+      color: #92bfff;
+    }
+    section {
+      max-width: 80rem;
+      margin: 0 auto;
+      padding: 5rem 1rem;
+    }
+    .bg-gradient-to-b {
+      background: linear-gradient(to bottom, #0a1930, #1a2f57 55%, #101933 100%);
+    }
+    .text-blue-500 { color: #5ea6ff; }
+    .text-blue-400 { color: #3c82cf; }
+    .text-blue-300 { color: #719ec7; }
+    .text-blue-200 { color: #b8dbfb; }
+    .text-blue-100 { color: #e0f2fe; }
+    .text-white { color: #fff; }
+    .text-balance { text-wrap: balance; }
+    .font-bold { font-weight: bold; }
+    .font-medium { font-weight: 500; }
+    .font-sans { font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; }
+    .text-2xl { font-size: 2rem; }
+    .text-3xl { font-size: 1.75rem; }
+    .text-5xl { font-size: 3rem; }
+    .text-6xl { font-size: 3.75rem; }
+    .text-xl { font-size: 1.25rem; }
+    .text-lg { font-size: 1.125rem; }
+    .text-sm { font-size: 0.875rem; }
+    .flex { display: flex; }
+    .flex-col { flex-direction: column; }
+    .flex-wrap { flex-wrap: wrap; }
+    .items-center { align-items: center; }
+    .justify-between { justify-content: space-between; }
+    .justify-center { justify-content: center; }
+    .gap-4 { gap: 1rem; }
+    .gap-6 { gap: 1.5rem; }
+    .gap-8 { gap: 2rem; }
+    .mx-auto { margin-left: auto; margin-right: auto; }
+    .my-auto { margin-top: auto; margin-bottom: auto; }
+    .mb-2 { margin-bottom: 0.5rem; }
+    .mb-4 { margin-bottom: 1rem; }
+    .mb-6 { margin-bottom: 1.5rem; }
+    .mb-8 { margin-bottom: 2rem; }
+    .mb-12 { margin-bottom: 3rem; }
+    .mt-20 { margin-top: 5rem; }
+    .p-4 { padding: 1rem; }
+    .p-6 { padding: 1.5rem; }
+    .px-4 { padding-left: 1rem; padding-right: 1rem; }
+    .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+    .py-6 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+    .py-8 { padding-top: 2rem; padding-bottom: 2rem; }
+    .py-12 { padding-top: 3rem; padding-bottom: 3rem; }
+    .py-20 { padding-top: 5rem; padding-bottom: 5rem; }
+    .rounded-md { border-radius: 0.375rem; }
+    .rounded-xl { border-radius: 0.75rem; }
+    .border { border: 1px solid rgba(37, 99, 235, 0.12); }
+    .border-blue-600 { border-color: #2563eb !important; }
+    .border-blue-800 { border-color: #1e40af !important; }
+    .bg-blue-50\/20 { background: rgba(36,45,69,0.20); }
+    .bg-blue-50\/40 { background: rgba(36,45,69,0.40);}
+    .bg-blue-400 { background: #4374cf; }
+    .bg-blue-700 { background: #203165; }
+    .bg-transparent { background: transparent; }
+    .shadow-sm { box-shadow: 0 1px 2px rgba(45, 61, 115, 0.25); }
+    .transition, .transition-all { transition: all 0.2s; }
+    .inline-block { display: inline-block; }
+    .inline-flex { display: inline-flex; }
+    button {
+      border: none;
+      outline: none;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: inherit;
+    }
+    .whitespace-nowrap { white-space: nowrap; }
+    .h-9 { height: 2.25rem; }
+    .px-8 { padding-left: 2rem; padding-right: 2rem; }
+    .py-6 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+    .px-4 { padding-left: 1rem; padding-right: 1rem; }
+    .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+    .w-full { width: 100%; }
+    .aspect-video { aspect-ratio: 16 / 9; }
+    .object-cover { object-fit: cover; }
+    .group:hover .group-hover\:scale-110 { transform: scale(1.10);}
+    .group-hover\:scale-110 { transition: transform 0.2s;}
+    @media (min-width: 768px) {
+      .md\:flex { display: flex; }
+      .md\:grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+      .md\:text-6xl { font-size: 3.75rem; }
+      .md\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .lg\:grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+    }
+    .grid { display: grid; }
+    .grid-cols-1 {grid-template-columns: repeat(1, 1fr);}
+    .max-w-7xl { max-width: 80rem; }
+    .min-h-screen { min-height: 100vh; }
+    .overflow-hidden { overflow: hidden; }
+    .overflow-x-hidden { overflow-x: hidden; }
+    .fixed { position: fixed; }
+    .inset-0 { inset: 0; }
+    .pointer-events-none { pointer-events: none; }
+    .relative { position: relative; }
+    .z-10 { z-index: 10; }
+    .shadow-xs { box-shadow: 0 1px 1.5px rgba(61,102,168,0.09);}
+    .border-t { border-top: 1px solid rgba(37, 99, 235, 0.13); }
+  </style>
+</head>
+<body class="font-sans antialiased">
+  <!-- 3D Hearts BG -->
+  <div class="hearts-bg-3d">
+    <svg class="heart-3d h1" viewBox="0 0 32 29"><defs><radialGradient id="lg1" cx="65%" cy="37%" r="70%"><stop offset="0%" stop-color="#7dd3fc"/><stop offset="80%" stop-color="#2e6ebc"/><stop offset="100%" stop-color="#1e3a5e"/></radialGradient></defs>
+      <path d="M23.6,2.3c-2.5,0-4.7,1.6-5.6,3.9C17.1,3.9,14.9,2.3,12.4,2.3C8.4,2.3,5,5.7,5,9.7c0,6.5,10.9,13.8,11.4,14.2
+      c0.3,0.2,0.6,0.3,0.8,0.3s0.6-0.1,0.8-0.3C26,23.5,37,16.2,37,9.7C37,5.7,33.6,2.3,29.6,2.3z" fill="url(#lg1)"/>
+    </svg>
+    <svg class="heart-3d h2" viewBox="0 0 32 29"><defs><radialGradient id="lg2" cx="60%" cy="35%" r="90%"><stop offset="0%" stop-color="#bae6fd"/><stop offset="100%" stop-color="#2563eb"/></radialGradient></defs>
+      <path d="M23.6,2.3c-2.5,0-4.7,1.6-5.6,3.9C17.1,3.9,14.9,2.3,12.4,2.3C8.4,2.3,5,5.7,5,9.7c0,6.5,10.9,13.8,11.4,14.2
+      c0.3,0.2,0.6,0.3,0.8,0.3s0.6-0.1,0.8-0.3C26,23.5,37,16.2,37,9.7C37,5.7,33.6,2.3,29.6,2.3z" fill="url(#lg2)"/>
+    </svg>
+    <svg class="heart-3d h3" viewBox="0 0 32 29"><defs><radialGradient id="lg3" cx="56%" cy="45%" r="120%"><stop offset="0%" stop-color="#e0e7ff"/><stop offset="62%" stop-color="#2563eb"/><stop offset="100%" stop-color="#bfd6d6"/></radialGradient></defs>
+      <path d="M23.6,2.3c-2.5,0-4.7,1.6-5.6,3.9C17.1,3.9,14.9,2.3,12.4,2.3C8.4,2.3,5,5.7,5,9.7c0,6.5,10.9,13.8,11.4,14.2
+      c0.3,0.2,0.6,0.3,0.8,0.3s0.6-0.1,0.8-0.3C26,23.5,37,16.2,37,9.7C37,5.7,33.6,2.3,29.6,2.3z" fill="url(#lg3)"/>
+    </svg>
+    <svg class="heart-3d h4" viewBox="0 0 32 29"><defs><radialGradient id="lg4" cx="75%" cy="55%" r="85%"><stop offset="0%" stop-color="#1e293b"/><stop offset="50%" stop-color="#47a1ff"/><stop offset="100%" stop-color="#0284c7"/></radialGradient></defs>
+      <path d="M23.6,2.3c-2.5,0-4.7,1.6-5.6,3.9C17.1,3.9,14.9,2.3,12.4,2.3C8.4,2.3,5,5.7,5,9.7c0,6.5,10.9,13.8,11.4,14.2
+      c0.3,0.2,0.6,0.3,0.8,0.3s0.6-0.1,0.8-0.3C26,23.5,37,16.2,37,9.7C37,5.7,33.6,2.3,29.6,2.3z" fill="url(#lg4)"/>
+    </svg>
+    <svg class="heart-3d h5" viewBox="0 0 32 29"><defs><radialGradient id="lg5" cx="44%" cy="70%" r="90%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="68%" stop-color="#b9caff"/><stop offset="100%" stop-color="#2563eb"/></radialGradient></defs>
+      <path d="M23.6,2.3c-2.5,0-4.7,1.6-5.6,3.9C17.1,3.9,14.9,2.3,12.4,2.3C8.4,2.3,5,5.7,5,9.7c0,6.5,10.9,13.8,11.4,14.2
+      c0.3,0.2,0.6,0.3,0.8,0.3s0.6-0.1,0.8-0.3C26,23.5,37,16.2,37,9.7C37,5.7,33.6,2.3,29.6,2.3z" fill="url(#lg5)"/>
+    </svg>
+    <svg class="heart-3d h6" viewBox="0 0 32 29"><defs><radialGradient id="lg6" cx="19%" cy="37%" r="83%"><stop offset="0%" stop-color="#b8bfff"/><stop offset="60%" stop-color="#485991"/><stop offset="100%" stop-color="#0d264a"/></radialGradient></defs>
+      <path d="M23.6,2.3c-2.5,0-4.7,1.6-5.6,3.9C17.1,3.9,14.9,2.3,12.4,2.3C8.4,2.3,5,5.7,5,9.7c0,6.5,10.9,13.8,11.4,14.2
+      c0.3,0.2,0.6,0.3,0.8,0.3s0.6-0.1,0.8-0.3C26,23.5,37,16.2,37,9.7C37,5.7,33.6,2.3,29.6,2.3z" fill="url(#lg6)"/>
+    </svg>
+    <svg class="heart-3d h7" viewBox="0 0 32 29"><defs><radialGradient id="lg7" cx="85%" cy="20%" r="70%"><stop offset="0%" stop-color="#93c5fd"/><stop offset="68%" stop-color="#2563eb"/><stop offset="100%" stop-color="#1e40af"/></radialGradient></defs>
+      <path d="M23.6,2.3c-2.5,0-4.7,1.6-5.6,3.9C17.1,3.9,14.9,2.3,12.4,2.3C8.4,2.3,5,5.7,5,9.7c0,6.5,10.9,13.8,11.4,14.2
+      c0.3,0.2,0.6,0.3,0.8,0.3s0.6-0.1,0.8-0.3C26,23.5,37,16.2,37,9.7C37,5.7,33.6,2.3,29.6,2.3z" fill="url(#lg7)"/>
+    </svg>
+    <svg class="heart-3d h8" viewBox="0 0 32 29"><defs><radialGradient id="lg8" cx="55%" cy="85%" r="91%"><stop offset="0%" stop-color="#2563eb"/><stop offset="60%" stop-color="#818cf8"/><stop offset="100%" stop-color="#0a1835"/></radialGradient></defs>
+      <path d="M23.6,2.3c-2.5,0-4.7,1.6-5.6,3.9C17.1,3.9,14.9,2.3,12.4,2.3C8.4,2.3,5,5.7,5,9.7c0,6.5,10.9,13.8,11.4,14.2
+      c0.3,0.2,0.6,0.3,0.8,0.3s0.6-0.1,0.8-0.3C26,23.5,37,16.2,37,9.7C37,5.7,33.6,2.3,29.6,2.3z" fill="url(#lg8)"/>
+    </svg>
+    <svg class="heart-3d h9" viewBox="0 0 32 29"><defs><radialGradient id="lg9" cx="32%" cy="35%" r="71%"><stop offset="0%" stop-color="#b5e1ff"/><stop offset="70%" stop-color="#25588b"/><stop offset="100%" stop-color="#1e3a5e"/></radialGradient></defs>
+      <path d="M23.6,2.3c-2.5,0-4.7,1.6-5.6,3.9C17.1,3.9,14.9,2.3,12.4,2.3C8.4,2.3,5,5.7,5,9.7c0,6.5,10.9,13.8,11.4,14.2
+      c0.3,0.2,0.6,0.3,0.8,0.3s0.6-0.1,0.8-0.3C26,23.5,37,16.2,37,9.7C37,5.7,33.6,2.3,29.6,2.3z" fill="url(#lg9)"/>
+    </svg>
+    <svg class="heart-3d h10" viewBox="0 0 32 29"><defs><radialGradient id="lg10" cx="90%" cy="70%" r="87%"><stop offset="0%" stop-color="#6dc4d0"/><stop offset="70%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#1e293b"/></radialGradient></defs>
+      <path d="M23.6,2.3c-2.5,0-4.7,1.6-5.6,3.9C17.1,3.9,14.9,2.3,12.4,2.3C8.4,2.3,5,5.7,5,9.7c0,6.5,10.9,13.8,11.4,14.2
+      c0.3,0.2,0.6,0.3,0.8,0.3s0.6-0.1,0.8-0.3C26,23.5,37,16.2,37,9.7C37,5.7,33.6,2.3,29.6,2.3z" fill="url(#lg10)"/>
+    </svg>
+  </div>
+  <div class="min-h-screen bg-gradient-to-b from-[#101933] via-[#12264a] to-[#0e142a] text-white overflow-hidden" style="position: relative; z-index: 2;">
+    <canvas class="fixed inset-0 pointer-events-none"></canvas>
+    <header class="relative z-10 border-b border-blue-800/30 bg-blue-50/20 backdrop-blur-sm">
+      <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+        <div class="text-2xl font-bold text-blue-500">🎮 Hearts Condo Games</div>
+        <nav class="hidden md:flex gap-8">
+          <button class="hover:text-blue-400 transition">Features</button>
+          <a href="https://discord.gg/byNY66DkEG" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition">Join Now</a>
+        </nav>
+      </div>
+    </header>
+    <section class="relative z-10 max-w-7xl mx-auto px-4 py-20 text-center">
+      <div class="mb-6 inline-block"><span class="text-sm text-blue-200">Like 2401 Online Players - 5 Active Games</span></div>
+      <h1 class="text-5xl md:text-6xl font-bold mb-6 text-balance">Premium Roblox <span class="text-blue-500">Hearts Condo Games</span></h1>
+      <p class="text-xl text-blue-200 mb-8 max-w-2xl mx-auto text-balance">Experience the ultimate collection of exclusive games with premium features and endless entertainment</p>
+      <div class="flex gap-4 justify-center flex-wrap">
+        <a href="https://discord.gg/byNY66DkEG" target="_blank" rel="noopener noreferrer">
+          <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all h-9 px-8 py-6 text-lg bg-blue-400 hover:bg-blue-700 text-white">Get Started Now</button>
+        </a>
+        <a href="https://discord.gg/byNY66DkEG" target="_blank" rel="noopener noreferrer">
+          <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all border shadow-xs h-9 px-8 py-6 text-lg border-blue-600 text-blue-400 hover:bg-blue-400/10 bg-transparent">Join Community</button>
+        </a>
+      </div>
+    </section>
+    <section class="relative z-10 max-w-7xl mx-auto px-4 py-12">
+      <h2 class="text-3xl font-bold mb-8">Featured Games</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Game 1 -->
+        <div class="flex flex-col gap-6 rounded-xl border py-6 shadow-sm bg-blue-50/40 border-blue-800 overflow-hidden hover:border-blue-600 transition group cursor-pointer">
+          <div class="aspect-video bg-gradient-to-br from-blue-400 to-blue-700 relative overflow-hidden">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/noFilter%20%283%29-1snIHqMXbs9KTc4fHIDTiI6tRV4neq.webp" alt="Character Talk" class="w-full h-full object-cover group-hover:scale-110 transition"/>
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold text-lg mb-2">Character Talk</h3>
+            <p class="text-blue-200 text-sm mb-4">Chat with amazing AI characters in an interactive experience</p>
+            <a href="https://shorturl.asia/itRTG" target="_blank" rel="noopener noreferrer" class="w-full">
+              <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all h-9 px-4 py-2 w-full bg-blue-400 hover:bg-blue-700 text-white">Play Now</button>
+            </a>
+          </div>
+        </div>
+        <!-- Game 2 -->
+        <div class="flex flex-col gap-6 rounded-xl border py-6 shadow-sm bg-blue-50/40 border-blue-800 overflow-hidden hover:border-blue-600 transition group cursor-pointer">
+          <div class="aspect-video bg-gradient-to-br from-cyan-200 to-blue-400 relative overflow-hidden">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-TRupFOgy7mCnmwmeLWmgnXqynWgbOg.png" alt="Talk With Neko" class="w-full h-full object-cover group-hover:scale-110 transition"/>
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold text-lg mb-2">[ ⭐AI ] Talk With Neko 🤗</h3>
+            <p class="text-blue-200 text-sm mb-4">Interact with cute neko characters and enjoy amazing conversations</p>
+            <a href="https://shorturl.asia/bRywn" target="_blank" rel="noopener noreferrer" class="w-full">
+              <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all h-9 px-4 py-2 w-full bg-blue-400 hover:bg-blue-700 text-white">Play Now</button>
+            </a>
+          </div>
+        </div>
+        <!-- Game 3 -->
+        <div class="flex flex-col gap-6 rounded-xl border py-6 shadow-sm bg-blue-50/40 border-blue-800 overflow-hidden hover:border-blue-600 transition group cursor-pointer">
+          <div class="aspect-video bg-gradient-to-br from-blue-300 to-blue-700 relative overflow-hidden">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-GwwR8EdRE0YTjEo8T7m7dCaIjSMNGM.png" alt="Ro-63 Classic" class="w-full h-full object-cover group-hover:scale-110 transition"/>
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold text-lg mb-2"> Ro-63 [Classic]</h3>
+            <p class="text-blue-200 text-sm mb-4">Experience the classic Ro-63 gameplay with timeless fun</p>
+            <a href="https://shorturl.asia/juGwK" target="_blank" rel="noopener noreferrer" class="w-full">
+              <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all h-9 px-4 py-2 w-full bg-blue-400 hover:bg-blue-700 text-white">Play Now</button>
+            </a>
+          </div>
+        </div>
+        <!-- Game 4 -->
+        <div class="flex flex-col gap-6 rounded-xl border py-6 shadow-sm bg-blue-50/40 border-blue-800 overflow-hidden hover:border-blue-600 transition group cursor-pointer">
+          <div class="aspect-video bg-gradient-to-br from-blue-300 to-blue-500 relative overflow-hidden">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-LngsxXnkvfv4eL7mcyxrWNFPc8JbsJ.png" alt="R6 Neko Girl Outfits" class="w-full h-full object-cover group-hover:scale-110 transition"/>
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold text-lg mb-2">R6 Neko Girl Outfits</h3>
+            <p class="text-blue-200 text-sm mb-4">Customize your neko with 500+ amazing outfits and express your unique style</p>
+            <a href="https://shorturl.asia/UrzOw" target="_blank" rel="noopener noreferrer" class="w-full">
+              <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all h-9 px-4 py-2 w-full bg-blue-400 hover:bg-blue-700 text-white">Play Now</button>
+            </a>
+          </div>
+        </div>
+        <!-- Game 5 -->
+        <div class="flex flex-col gap-6 rounded-xl border py-6 shadow-sm bg-blue-50/40 border-blue-800 overflow-hidden hover:border-blue-600 transition group cursor-pointer">
+          <div class="aspect-video bg-gradient-to-br from-indigo-400 to-blue-800 relative overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?fit=crop&w=600&q=80" alt="Blue City Life" class="w-full h-full object-cover group-hover:scale-110 transition"/>
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold text-lg mb-2">Blue City Life</h3>
+            <p class="text-blue-200 text-sm mb-4">Enjoy the vibrant city life with new friends and daily parties</p>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="w-full">
+              <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all h-9 px-4 py-2 w-full bg-blue-400 hover:bg-blue-700 text-white">Play Now</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="features" class="relative z-10 max-w-7xl mx-auto px-4 py-20">
+      <h2 class="text-3xl font-bold mb-12 text-center">Why Choose Our Platform</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="flex flex-col gap-6 rounded-xl border shadow-sm bg-blue-50/20 border-blue-800 p-6">
+          <div class="text-3xl mb-4">🎮</div>
+          <h3 class="font-bold text-xl mb-2">Premium Games</h3>
+          <p class="text-blue-200">Access exclusive games not available anywhere else with premium features</p>
+        </div>
+        <div class="flex flex-col gap-6 rounded-xl border shadow-sm bg-blue-50/20 border-blue-800 p-6">
+          <div class="text-3xl mb-4">👥</div>
+          <h3 class="font-bold text-xl mb-2">Active Community</h3>
+          <p class="text-blue-200">Join thousands of players in our thriving community with daily events</p>
+        </div>
+        <div class="flex flex-col gap-6 rounded-xl border shadow-sm bg-blue-50/20 border-blue-800 p-6">
+          <div class="text-3xl mb-4">⚡</div>
+          <h3 class="font-bold text-xl mb-2">Fast &amp; Reliable</h3>
+          <p class="text-blue-200">Experience smooth gameplay with our optimized servers and support</p>
+        </div>
+      </div>
+    </section>
+    <footer class="relative z-10 border-t border-blue-800/30 bg-blue-50/40 backdrop-blur-sm mt-20">
+      <div class="max-w-7xl mx-auto px-4 py-8 text-center text-blue-300">
+        <p>© 2025 Hearts Condo Games. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
